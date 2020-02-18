@@ -17,7 +17,7 @@ This is a coding challenge for prospective front-end and full-stack developer ap
   - 4 columns on large size screens (> 960px)
 
 - [ ] On the bottom of the page, more images can be requested with a `load more` button. This results in more images being added to the grid.
-- [ ] When the user taps on a photo on the grid it should show the full photo in a full width lightbox popup with more information about the photo.
+- [ ] When the user taps on a photo on the grid it should show the full photo in a popup with more information about the photo.
 - [ ] The lightbox popup should be dismissible with a close button.
 
 ### Evaluation:
