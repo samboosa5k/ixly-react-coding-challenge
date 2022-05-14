@@ -1,1 +1,1 @@
-export {Image as default } from './App';
+export { Image as default } from './Image';

@@ -1,23 +1,42 @@
-import React from 'react';
-import './style.css';
+/**
+ * Modal component to toggle the maximized photo view
+ * @author Jasper Verbon
+ * @description - this modal will be triggered by a contexts dispatch
+ * @note: THe react 18 portal functionality is different than react 17 :S
+ */
+import { useCallback, useEffect, useRef } from 'react';
+import ReactDOM from 'react-dom';
 
-export function Modal() {
-  return (<div className="App">
-    <header className="App-header">
-      <img src="" className="App-logo" alt="logo"/>
-      <p>
-        Edit <code>src/App.tsx</code> and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
-  </div>);
-}
+export const Modal = () => {
+  // const {appState, dispatch  } = useContext(AppContext);
+  const modalRef = useRef<HTMLElement>(
+    document.getElementById('modal') as HTMLElement
+  );
+  const newElement = useRef<HTMLElement>(
+    document.createElement('div') as HTMLElement
+  );
+
+  // Mount modal on mount
+  const mountModal = useCallback(() => {
+    if (!modalRef.current) {
+      console.log('modal-root not found');
+      return;
+    }
+    modalRef.current.appendChild(newElement.current);
+    console.log('modal has been attached to #modal');
+  }, []);
+
+  // Call mountModal when component mounts
+  useEffect(() => {
+    mountModal();
+    console.log('Initiating modal mounting');
+    return () => {
+      modalRef.current.removeChild(modalRef.current.firstChild);
+      console.log('Modal has been unmounted');
+    };
+  }, [mountModal]);
+
+  return ReactDOM.createPortal(<h1>Hello Modal</h1>, newElement.current);
+};
 
 export default Modal;

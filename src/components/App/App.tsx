@@ -1,23 +1,35 @@
 import React from 'react';
-import './style.css';
+import Grid from '../Grid';
 
-export function App() {
-  return (<div className="App">
-    <header className="App-header">
-      <img src="" className="App-logo" alt="logo"/>
-      <p>
-        Edit <code>src/App.tsx</code> and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
+import { AppContainer } from './App.style';
+
+export const App = () => (
+  <AppContainer id={'App'}>
+    <header>
+      <h1>Fast Food Gallery</h1>
     </header>
-  </div>);
-}
+    <Grid
+      urls={[
+        'www',
+        'www',
+        'www',
+        'www',
+        'www',
+        'www',
+        'www',
+        'www',
+        'www',
+        'www',
+        'www',
+        'www',
+        'www',
+        'www',
+        'www',
+        'www',
+        'www',
+        'www'
+      ]}></Grid>
+  </AppContainer>
+);
 
 export default App;
