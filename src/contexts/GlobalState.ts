@@ -9,9 +9,10 @@ interface IGlobalState {
     connected: boolean;
     errors: string[];
     dataList: any[];
+    fetchCount: number;
   };
   session: {
-    existing: boolean;
+    new: boolean;
     restored: boolean;
     sessionData: any[];
   };
