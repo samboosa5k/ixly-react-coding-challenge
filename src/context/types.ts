@@ -1,4 +1,4 @@
-interface IGlobalState {
+export interface IAppState {
   app: {
     loading: boolean;
     loaded: boolean;
@@ -17,5 +17,3 @@ interface IGlobalState {
     sessionData: any[];
   };
 }
-
-export {};

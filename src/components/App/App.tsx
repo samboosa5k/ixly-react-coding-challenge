@@ -1,35 +1,20 @@
 import React from 'react';
 import Grid from '../Grid';
+import { Query } from '../Query/Query';
 
 import { AppContainer } from './App.style';
 
-export const App = () => (
-  <AppContainer id={'App'}>
-    <header>
-      <h1>Fast Food Gallery</h1>
-    </header>
-    <Grid
-      urls={[
-        'www',
-        'www',
-        'www',
-        'www',
-        'www',
-        'www',
-        'www',
-        'www',
-        'www',
-        'www',
-        'www',
-        'www',
-        'www',
-        'www',
-        'www',
-        'www',
-        'www',
-        'www'
-      ]}></Grid>
-  </AppContainer>
-);
+export const App = () => {
+  return (
+    <AppContainer id={'App'}>
+      <Query>
+        {({ data }) => {
+          return <Grid loadedData={data} />;
+        }}
+      </Query>
+    </AppContainer>
+  );
+};
 
 export default App;
+// return <Grid loadedData={data} />;

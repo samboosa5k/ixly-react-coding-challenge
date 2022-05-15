@@ -1,5 +1,15 @@
 import styled from 'styled-components';
-const ResponsiveGrid = styled.div`
+
+const Container = styled.div`
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0.5em;
+  width: 100%;
+  height: 100%;
+`;
+
+const GridStyling = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
@@ -17,19 +27,10 @@ const ResponsiveGrid = styled.div`
   }
 `;
 
-const Container = styled.div`
-  position: relative;
-  display: block;
-  margin: 0;
-  padding: 0.5em;
-  width: 100%;
-  height: 100%;
-`;
-
-export const StyledGrid = styled(({ children }: IChildProps) => {
+export const ResponsiveGrid = styled(({ children }: IChildProps) => {
   return (
     <Container id="grid-container">
-      <ResponsiveGrid>{children}</ResponsiveGrid>
+      <GridStyling>{children}</GridStyling>
     </Container>
   );
 })``;

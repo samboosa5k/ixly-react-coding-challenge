@@ -5,10 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="087b2644-da7c-43a4-b03d-6dac18e937e4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/@types/unsplash.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Query/Query.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Query/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Query/utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/context/AppContext.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/context/AppStateActions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/context/initialAppState.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/context/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/validation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contexts/GlobalState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/GlobalState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/@types/common.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/@types/common.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Grid/Grid.style.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Grid/Grid.style.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Grid/Grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Grid/Grid.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Grid/GridItem/GridItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Grid/GridItem/GridItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Grid/GridItem/types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Grid/constants.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Grid/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Grid/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Image/Image.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Image/Image.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Image/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contexts/GlobalContext.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contexts/GlobalState.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +52,17 @@
     <option name="FOLDING_ENABLED" value="false" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -46,7 +81,10 @@
     </order>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <hideBySeverity>
+      <option value="15" />
+    </hideBySeverity>
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="295igO25eD8KIR5s83jXIZVQBPt" />
   <component name="ProjectLevelVcsManager">
@@ -68,7 +106,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "js.linters.configure.manually.selectedeslint": "true",
-    "last_opened_file_path": "C:/web/ixly-react-coding-challenge",
+    "last_opened_file_path": "C:/web/ixly-react-coding-challenge/src/HOC/AxiosGet",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.selected.package.eslint": "C:\\web\\ixly-react-coding-challenge\\node_modules\\eslint",
@@ -76,7 +114,7 @@
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "C:\\web\\ixly-react-coding-challenge\\node_modules\\prettier",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.customizations",
+    "settings.editor.selected.configurable": "editor.preferences.tabs",
     "ts.external.directory.path": "C:\\web\\ixly-react-coding-challenge\\node_modules\\typescript\\lib",
     "typescript.add.unambiguous.imports.on.the.fly": "true",
     "vue.rearranger.settings.migration": "true"
@@ -92,18 +130,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\web\ixly-react-coding-challenge\src\HOC\AxiosGet" />
       <recent name="C:\web\ixly-react-coding-challenge\src\components\Skeletons" />
       <recent name="C:\web\ixly-react-coding-challenge\src\components\Grid\GridItem" />
       <recent name="C:\web\ixly-react-coding-challenge\src\components\Modal" />
       <recent name="C:\web\ixly-react-coding-challenge\src\components\Image" />
-      <recent name="C:\web\ixly-react-coding-challenge\src\components\Grid" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\web\ixly-react-coding-challenge\src\components\Grid" />
       <recent name="C:\web\ixly-react-coding-challenge\src\components" />
-      <recent name="C:\web\ixly-react-coding-challenge\src\components\Skeletons" />
+      <recent name="C:\web\ixly-react-coding-challenge\src\HOC" />
+      <recent name="C:\web\ixly-react-coding-challenge\src\HOC\AxiosGet" />
       <recent name="C:\web\ixly-react-coding-challenge\src" />
-      <recent name="C:\web\ixly-react-coding-challenge\src\lib" />
+      <recent name="C:\web\ixly-react-coding-challenge\src\components\App\AppFetch" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -125,18 +163,45 @@
       <workItem from="1652528178515" duration="2200000" />
       <workItem from="1652530403193" duration="2411000" />
       <workItem from="1652532848475" duration="13910000" />
+      <workItem from="1652558051312" duration="13331000" />
+      <workItem from="1652617265638" duration="22960000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="api-configuration" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

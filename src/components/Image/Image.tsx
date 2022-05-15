@@ -1,23 +1,8 @@
-import React from 'react';
-import './style.css';
+import styled from 'styled-components';
 
-export function Image() {
-  return (<div className="App">
-    <header className="App-header">
-      <img src="" className="App-logo" alt="logo"/>
-      <p>
-        Edit <code>src/App.tsx</code> and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
-  </div>);
-}
-
-export default Image;
+export const Image = styled.img`
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;

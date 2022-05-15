@@ -1,45 +1,56 @@
-import React, { Suspense, useEffect, useState, useTransition } from 'react';
-import { StyledGrid } from './Grid.style';
+import React, { useEffect, useState, useTransition } from 'react';
+import { isDefined } from '../../utils/validation';
+import Image from '../Image';
+import { ResponsiveGrid } from './Grid.style';
 import { GridItem } from './GridItem';
-import { IGridProps } from './types';
+import { GridImageType, IGridProps } from './types';
 
-const GridItems = (props: IGridProps) => {
-  return (
-    <>
-      {props && props.urls
-        ? props.urls.map((_: string, i: number) => (
-            <GridItem key={`${i}_test`}>Test</GridItem>
-          ))
-        : null}
-    </>
-  );
+type MappedGridItemProps = { gridData: GridImageType[] };
+const MappedGridItems = (props: MappedGridItemProps) => {
+  const { gridData } = props;
+  useEffect(() => {
+    console.log('GridItems rendered', gridData);
+  }, [gridData]);
+
+  if (!isDefined(gridData)) {
+    return null;
+  } else {
+    return (
+      <>
+        {gridData.map((imgObj: GridImageType, idx: number) => (
+          <GridItem key={`${idx}_test`}>
+            <Image
+              id={imgObj.id}
+              src={imgObj?.src}
+              alt={imgObj.alt}
+              decoding="async"
+              loading="lazy"
+            />
+          </GridItem>
+        ))}
+      </>
+    );
+  }
 };
-
 /**
  * Grid component
  * @param {IChildProps} props
  * @param {children} props.children - e.g. photo tiles which will be layed out in a grid
  */
-export const Grid = (props: IGridProps) => {
+export const Grid = ({ loadedData }: IGridProps) => {
   const [isPending, startTransition] = useTransition();
-  const [items, setItems] = useState<string[]>([]);
+  const [loaded, setLoaded] = useState<GridImageType[]>([]);
 
   useEffect(() => {
     startTransition(() => {
-      setItems(props.urls);
+      setLoaded(loadedData);
     });
-  }, [props.urls]);
+  }, [loadedData]);
 
   return (
-    <Suspense fallback={<h3>Loading</h3>}>
-      <StyledGrid>
-        {props.children}
-        {isPending ? (
-          <GridItem>loading</GridItem>
-        ) : (
-          <GridItems urls={props.urls} />
-        )}
-      </StyledGrid>
-    </Suspense>
+    <ResponsiveGrid>
+      {isPending && <div>Loading...</div>}
+      <MappedGridItems gridData={loaded} />
+    </ResponsiveGrid>
   );
 };

@@ -1,20 +1,15 @@
 /**
- * Modal component to toggle the maximized photo view
- * @author Jasper Verbon
- * @description - this modal will be triggered by a contexts dispatch
+ * Modal component to toggle the maximized photo view/lightbox
+ * @description - this modal will be triggered by a context dispatch
  * @note: THe react 18 portal functionality is different than react 17 :S
  */
 import { useCallback, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 
 export const Modal = () => {
-  // const {appState, dispatch  } = useContext(AppContext);
-  const modalRef = useRef<HTMLElement>(
-    document.getElementById('modal') as HTMLElement
-  );
-  const newElement = useRef<HTMLElement>(
-    document.createElement('div') as HTMLElement
-  );
+  // const {appState, dispatch  } = useContext(Query);
+  const modalRef = useRef<HTMLElement>(document.getElementById('modal'));
+  const newElement = useRef<HTMLElement>(document.createElement('div'));
 
   // Mount modal on mount
   const mountModal = useCallback(() => {
