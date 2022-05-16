@@ -4,22 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="087b2644-da7c-43a4-b03d-6dac18e937e4" name="Changes" comment="- api config done, - session storage done, merging into main">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/@types/common.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/@types/common.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.style.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Modal.style.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Query/Query.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Query/Query.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Query/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Query/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Query/utils.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/AppStateActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/AppStateActions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/AppStateReducer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/AppStateReducer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/initialAppState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/initialAppState.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/sessionStorage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/sessionStorage.ts" afterDir="false" />
-    </list>
+    <list default="true" id="087b2644-da7c-43a4-b03d-6dac18e937e4" name="Changes" comment="- api config done, - session storage done, merging into main" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
