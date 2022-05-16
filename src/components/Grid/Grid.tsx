@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useTransition } from 'react';
+import React, { memo, useEffect, useState, useTransition } from 'react';
 import { isDefined } from '../../utils/validation';
 import Image from '../Image';
 import { ResponsiveGrid } from './Grid.style';
 import { GridItem } from './GridItem';
-import { GridImageType, IGridProps } from './types';
+import { IGridProps } from './types';
 
-type MappedGridItemProps = { gridData: GridImageType[] };
+type MappedGridItemProps = { gridData: ImageProps[] };
 const MappedGridItems = (props: MappedGridItemProps) => {
   const { gridData } = props;
   useEffect(() => {
@@ -17,7 +17,7 @@ const MappedGridItems = (props: MappedGridItemProps) => {
   } else {
     return (
       <>
-        {gridData.map((imgObj: GridImageType, idx: number) => (
+        {gridData.map((imgObj: ImageProps, idx: number) => (
           <GridItem key={`${idx}_test`}>
             <Image
               id={imgObj.id}
@@ -32,14 +32,15 @@ const MappedGridItems = (props: MappedGridItemProps) => {
     );
   }
 };
+
 /**
  * Grid component
  * @param {IChildProps} props
  * @param {children} props.children - e.g. photo tiles which will be layed out in a grid
  */
-export const Grid = ({ loadedData }: IGridProps) => {
+export const Grid = memo(function Grid({ loadedData }: IGridProps) {
   const [isPending, startTransition] = useTransition();
-  const [loaded, setLoaded] = useState<GridImageType[]>([]);
+  const [loaded, setLoaded] = useState<ImageProps[]>([]);
 
   useEffect(() => {
     startTransition(() => {
@@ -53,4 +54,4 @@ export const Grid = ({ loadedData }: IGridProps) => {
       <MappedGridItems gridData={loaded} />
     </ResponsiveGrid>
   );
-};
+});

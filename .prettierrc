@@ -6,11 +6,12 @@
   "bracketSpacing": true,
   "jsxBracketSameLine": true,
   "endOfLine": "auto",
+  "printWidth": 100,
+  "quoteProps": "consistent",
   "importOrder": [
     "react",
     "^styled-components$",
     "^types",
-    "@components|@molecules|@organisms|@templates",
     "^[./]",
     "^[.]"
   ],

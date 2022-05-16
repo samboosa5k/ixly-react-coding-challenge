@@ -4,7 +4,10 @@ declare global {
   interface IChildProps {
     children?: ReactNode;
   }
+
+  type ImageProps = {
+    id: string;
+    src: string;
+    alt: string;
+  };
 }
-// export interface IChildProps {
-//   children: ReactNode;
-// }

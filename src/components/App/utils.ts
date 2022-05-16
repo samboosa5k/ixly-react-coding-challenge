@@ -21,7 +21,7 @@ const fetchQuery = async (pagenr: number, apiKey: string) => {
  * @param imageObjArr - json array that comes directly from Unsplash
  */
 
-const reduceUnsplashImageObj = (imageObjArr: IUnsplashImageObj[]) => {
+const reduceUnsplashImageObj = async (imageObjArr: IUnsplashImageObj[]) => {
   return imageObjArr.map((imageObj: IUnsplashImageObj) => {
     return {
       id: imageObj.id,
@@ -39,11 +39,11 @@ const reduceUnsplashImageObj = (imageObjArr: IUnsplashImageObj[]) => {
 
 interface ISessionFetchProps {
   page: number;
-  imgAttrArr?: IUnsplashImageObj[];
+  imgObjArr: ImageProps[];
 }
 
-const getSessionStorage = ({ page }: ISessionFetchProps): ImageProps[] => {
-  const sessionStorage = window.sessionStorage.getItem(`page_${page}`);
+const getSessionStorage = ({ page }: Partial<ISessionFetchProps>): ImageProps[] => {
+  const sessionStorage = window.localStorage.getItem(`page_${page}`);
   if (!sessionStorage) {
     return [];
   } else {
@@ -51,16 +51,16 @@ const getSessionStorage = ({ page }: ISessionFetchProps): ImageProps[] => {
   }
 };
 
-const setSessionStorage = ({ page, imgAttrArr }: ISessionFetchProps) => {
+const setSessionStorage = ({ page, imgObjArr }: ISessionFetchProps) => {
   const existingSessionStorage = getSessionStorage({ page: 1 });
 
-  const isNewData = JSON.stringify(imgAttrArr) !== JSON.stringify(existingSessionStorage);
+  const isNewData = JSON.stringify(imgObjArr) !== JSON.stringify(existingSessionStorage);
   if (!isNewData) {
     return;
   } else {
-    window.sessionStorage.setItem(
+    window.localStorage.setItem(
       `page_${page}`,
-      JSON.stringify([...existingSessionStorage, ...imgAttrArr])
+      JSON.stringify([...existingSessionStorage, ...imgObjArr])
     );
   }
 };
