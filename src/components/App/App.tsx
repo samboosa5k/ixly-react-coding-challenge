@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import AppStateProvider, { useAppState } from '../../context/AppContext';
-import Grid from '../Grid';
+import React, { useState } from 'react';
 import { Button as LoadMore } from '../Button/Button';
+import Grid from '../Grid';
 import { Query } from '../Query/Query';
 
 import { AppContainer } from './App.style';
 
 export const App = () => {
-  const { appState } = useAppState();
   const [page, setPage] = useState<number>(1);
 
   const loadMore = () => {

@@ -21,7 +21,7 @@ const reduceUnsplashImageObj = (imageObjArr: IUnsplashImageObj[]) => {
 
 interface ISessionFetchProps {
   page: number;
-  imgObjArr: ImageProps[];
+  cleanImgObjArr: ImageProps[];
 }
 
 const getSessionStorage = ({ page }: Partial<ISessionFetchProps>): ImageProps[] => {
@@ -33,16 +33,26 @@ const getSessionStorage = ({ page }: Partial<ISessionFetchProps>): ImageProps[] 
   }
 };
 
-const setSessionStorage = ({ page, imgObjArr }: ISessionFetchProps) => {
-  const existingSessionStorage = getSessionStorage({ page: 1 });
+/**
+ * Function to set the sessionStorage
+ * @param imageObjArr - filtered array of image data coming from Unsplash using
+ *   {@function reduceUnsplashImageObj}
+ *
+ * @param {number} page - the current page or nr. of time's we've fetched the data
+ *
+ * @param {ImageProps[]} cleanImgObjArr - the filtered array of image data
+ */
+const setSessionStorage = ({ page, cleanImgObjArr }: ISessionFetchProps) => {
+  const existingSessionStorage = getSessionStorage({ page: page });
 
-  const isNewData = JSON.stringify(imgObjArr) !== JSON.stringify(existingSessionStorage);
+  const isNewData = JSON.stringify(cleanImgObjArr) !== JSON.stringify(existingSessionStorage);
   if (!isNewData) {
     return;
   } else {
+    console.log(`page_${page}`, 'set new session storage');
     window.sessionStorage.setItem(
       `page_${page}`,
-      JSON.stringify([...existingSessionStorage, ...imgObjArr])
+      JSON.stringify([...existingSessionStorage, ...cleanImgObjArr])
     );
   }
 };

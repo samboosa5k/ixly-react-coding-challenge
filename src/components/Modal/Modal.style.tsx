@@ -11,6 +11,7 @@ const Backdrop = styled.div`
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.75);
   z-index: 10;
+  overflow: hidden;
 `;
 
 const CloseText = styled.span`
@@ -32,9 +33,15 @@ const Container = styled.div`
   overflow: hidden;
   max-width: 80%;
   max-height: 80%;
-  padding-top: 2em;
+  padding: 1em;
   align-items: center;
   justify-content: center;
+`;
+
+const InnerContainer = styled(Container)`
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
+  box-sizing: content-box;
+  border-radius: 0.5em;
 `;
 
 const ModalImage = styled.img`
@@ -45,20 +52,22 @@ const ModalImage = styled.img`
   height: 100%;
   object-fit: scale-down;
   box-sizing: content-box;
+  border-radius: 0.5em;
 `;
 
 type ModalContentProps = ImageProps & {
   onClose: () => void;
 };
 
+// This is the wrapper for the modal content made of all the styled components above
 const ModalContent = (props: ModalContentProps) => {
   const { src, id, alt, onClose } = props;
   return (
     <Backdrop>
       <Container>
-        <Container>
+        <InnerContainer>
           <ModalImage id={id} src={src} alt={alt} />
-        </Container>
+        </InnerContainer>
         <CloseText onClick={onClose}>Close</CloseText>
       </Container>
     </Backdrop>
