@@ -4,29 +4,21 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="087b2644-da7c-43a4-b03d-6dac18e937e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Modal/Modal.style.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/context/utils.ts" afterDir="false" />
+    <list default="true" id="087b2644-da7c-43a4-b03d-6dac18e937e4" name="Changes" comment="- api config done, - session storage done, merging into main">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/@types/common.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/@types/common.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.style.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.style.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/hooks.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/utils.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/Button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Grid/Grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Grid/Grid.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Grid/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Grid/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.style.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Modal.style.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Query/Query.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Query/Query.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Query/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Query/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Query/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Query/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/AppContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/AppContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Query/utils.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/context/AppStateActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/AppStateActions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/context/AppStateReducer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/AppStateReducer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/context/initialAppState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/initialAppState.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/context/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/sessionStorage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/sessionStorage.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="tsconfig.json" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -91,30 +83,30 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "js.linters.configure.manually.selectedeslint": "true",
-    "last_opened_file_path": "C:/web/ixly-react-coding-challenge/src/components/App",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.selected.package.eslint": "C:\\web\\ixly-react-coding-challenge\\node_modules\\eslint",
-    "node.js.selected.package.standard": "",
-    "nodejs_package_manager_path": "npm",
-    "prettier.import.notification.dismissed": "true",
-    "prettierjs.PrettierConfiguration.Package": "C:\\web\\ixly-react-coding-challenge\\node_modules\\prettier",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.sourceCode.JavaScript",
-    "ts.external.directory.path": "C:\\web\\ixly-react-coding-challenge\\node_modules\\typescript\\lib",
-    "typescript.add.unambiguous.imports.on.the.fly": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/web/ixly-react-coding-challenge/src/components/App&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;C:\\web\\ixly-react-coding-challenge\\node_modules\\eslint&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettier.import.notification.dismissed&quot;: &quot;true&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\web\\ixly-react-coding-challenge\\node_modules\\prettier&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.JavaScript&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\web\\ixly-react-coding-challenge\\node_modules\\typescript\\lib&quot;,
+    &quot;typescript.add.unambiguous.imports.on.the.fly&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -161,6 +153,14 @@
       <workItem from="1652558051312" duration="13331000" />
       <workItem from="1652617265638" duration="63807000" />
     </task>
+    <task id="LOCAL-00001" summary="- api config done, - session storage done, merging into main">
+      <created>1652687099909</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1652687099909</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,25 +184,15 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="api-configuration" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="- api config done, - session storage done, merging into main" />
+    <option name="LAST_COMMIT_MESSAGE" value="- api config done, - session storage done, merging into main" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

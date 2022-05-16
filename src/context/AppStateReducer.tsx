@@ -13,20 +13,14 @@ export const appStateReducer: AppStateReducer = (
     case AppStateActions.INIT_APP_STATE:
       return {
         ...state,
-        init: true,
-        session: {
-          ...state.session,
-          new: true
-        }
+        init: true
       };
-    case AppStateActions.UPDATE_APP_STATE:
-      return { ...state, ...action.payload };
     case AppStateActions.LOAD_SESSION_DATA:
       return {
         ...state,
         api: {
           ...state.api,
-          dataList: action.payload
+          dataList: [...state.api.dataList, ...action.payload]
         }
       };
     case AppStateActions.LOAD_IMAGE_FETCH_DATA:

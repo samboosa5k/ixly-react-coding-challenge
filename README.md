@@ -1,29 +1,68 @@
-# React Developer Coding Challenge
+## IXLY React Developer Coding Challenge
 
-This is a coding challenge for prospective front-end and full-stack developer applicants applying to Ixly. If you're unfamiliar with React, Facebook has put together a helpful tutorial that provides a quick introduction to the basics: https://reactjs.org/docs/hello-world.html
+> #### [Original Repo Link](https://github.com/ixly/react-coding-challenge#readme) `https://github.com/ixly/react-coding-challenge#readme`
+>
+---
 
-## Goal:
+### By: Jasper Verbon
 
-#### Build a simple React app that allows viewing and interacting with a grid of photos from Unsplash
+### Github: {https://github.com/samboosa5k}
 
-- [ ] Fork this repo into your GitHub account. Keep it public until we have been able to review it.
-- [ ] Use `create-react-app` to set up a basic single-page React application as shown here: https://reactjs.org/docs/create-a-new-react-app.html#create-react-app. (NOTE: We will only focus on creating a single-page React application, so don't worry about the other sections on that page such as Next.js).
-- [ ] Refer to the Unsplash API docs here to set up a developer account: https://unsplash.com/documentation.
-- [ ] Display a grid of photos in your React app. Use the `GET /photos` endpoint from the Unsplash API to get a set of images.
-- [ ] The grid must be responsive and adhere to the following layout:
+---
 
-  - 2 columns on small size screens (< 720px)
-  - 3 columns on medium size screens (< 960px)
-  - 4 columns on large size screens (> 960px)
+#### Basic Features
 
-- [ ] On the bottom of the page, more images can be requested with a `load more` button. This results in more images being added to the grid.
-- [ ] When the user taps on a photo on the grid it should show the full photo in a popup with more information about the photo.
-- [ ] The lightbox popup should be dismissible with a close button.
+1. Used standard ```create-react-app --template typescript```
+2. Responsive grid columns as per the assignment
+3. Querying the Unsplash API /photos
+   - ***( fastfood )***
+4. A button to request more photos from the API
+    - ***( limit set at 12 )***
+5. Clicking a photo opens a centered Lightbox/Modal
+   - ***Created with React.Portal***
+   - Opens & Closes
+   - Triggered through context
 
-### Evaluation:
+> #### Build Commands
+>
+> Literally the same as for create-react-app
+>
+> >- `npm run start`
 
-- [ ] The React app should build without errors (typically using `npm run build`). If there are necessary steps required to get it to compile, those should be covered in README.md.
-- [ ] No crashes or bugs.
-- [ ] App should operate as a single-page application, without the need for a custom back-end.
-- [ ] Code is easily understood and communicative (eg. comments, variable names, etc).
-- [ ] GitHub commit history is consistent, easy to follow and understand.
+`npm run build` will output this:
+```shell
+File sizes after gzip:
+
+  64.59 kB  build\static\js\main.422e1940.js
+  1.8 kB    build\static\js\787.b4f3be02.chunk.js
+  249 B     build\static\css\main.b71e9eef.css
+```
+---
+
+#### Extra Information
+
+> 
+> #### Session storage
+> 
+> >- Fetches get saved to session storage
+> >- If you refresh the page, and you fetched 5 times, 
+> >- ...the "Load More" button will trigger loading from the session storage
+> 
+> #### Project Structure
+> - Flat folder structure
+> 
+> >- `@types` folder - only for globals
+> >- `Component` folder 
+> >  - ***index.ts***
+> >  - ***Component.tsx***
+> >  - ***Component.style.tsx***
+> >  - ***types.ts*** - only when really necessary
+> >  - `Component/SubComponent` 
+> >    - Only the Grid component has 1 Nested folder
+> >- `Context` folder
+> >  - AppContext.tsx  - provides the main state
+> >  - AppStateAction.ts - Types of actions you can dispatch
+> >  - AppStateReducer.ts - Reducer for the state dispatch actions
+> >  - ...
+> >
+
