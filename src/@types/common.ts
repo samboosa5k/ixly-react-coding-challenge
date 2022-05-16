@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, ReactPortal } from 'react';
 
 declare global {
   interface IChildProps {

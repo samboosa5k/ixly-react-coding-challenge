@@ -4,14 +4,15 @@ export enum AppStateActions {
   INIT_APP_STATE,
   UPDATE_APP_STATE,
   LOAD_SESSION_DATA,
-  // SAVE_SESSION_DATA,
+  LOAD_IMAGE_FETCH_DATA,
   CLEAR_SESSION_DATA,
-  SET_STATE_ERRORS
+  SET_STATE_ERRORS,
+  TOGGLE_MODAL
 }
 
 type InitStateAction = {
   type: AppStateActions.INIT_APP_STATE;
-  payload: IAppState;
+  // payload: IAppState;
 };
 
 type UpdateStateAction = {
@@ -21,9 +22,13 @@ type UpdateStateAction = {
 
 type LoadSessionDataAction = {
   type: AppStateActions.LOAD_SESSION_DATA;
-  payload: Partial<IAppState>;
+  payload: ImageProps[];
 };
 
+type LoadImageFetchDataAction = {
+  type: AppStateActions.LOAD_IMAGE_FETCH_DATA;
+  payload: ImageProps[];
+};
 // type SaveSessionDataAction = {
 //   type: AppStateActions.SAVE_SESSION_DATA;
 //   payload: Partial<IAppState>;
@@ -39,10 +44,16 @@ type SetStateErrorsAction = {
   payload: Partial<IAppState>;
 };
 
+type ToggleModalAction = {
+  type: AppStateActions.TOGGLE_MODAL;
+  payload: ImageProps;
+};
+
 export type AppStateDispatchActions =
   | InitStateAction
   | UpdateStateAction
   | LoadSessionDataAction
-  // | SaveSessionDataAction
+  | LoadImageFetchDataAction
   | ClearSessionDataAction
-  | SetStateErrorsAction;
+  | SetStateErrorsAction
+  | ToggleModalAction;

@@ -1,27 +1,9 @@
 /**
- * Fetch function
- */
-
-const fetchQuery = async (pagenr: number, apiKey: string) => {
-  try {
-    const response = await fetch(
-      `https://api.unsplash.com/search/photos?page=${pagenr}&query=fastfood&client_id=${apiKey}`
-    );
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error(error);
-    return [];
-  }
-  // }
-};
-
-/**
  * Function to just filter out the data for imges
  * @param imageObjArr - json array that comes directly from Unsplash
  */
 
-const reduceUnsplashImageObj = async (imageObjArr: IUnsplashImageObj[]) => {
+const reduceUnsplashImageObj = (imageObjArr: IUnsplashImageObj[]) => {
   return imageObjArr.map((imageObj: IUnsplashImageObj) => {
     return {
       id: imageObj.id,
@@ -43,7 +25,7 @@ interface ISessionFetchProps {
 }
 
 const getSessionStorage = ({ page }: Partial<ISessionFetchProps>): ImageProps[] => {
-  const sessionStorage = window.localStorage.getItem(`page_${page}`);
+  const sessionStorage = window.sessionStorage.getItem(`page_${page}`);
   if (!sessionStorage) {
     return [];
   } else {
@@ -58,11 +40,16 @@ const setSessionStorage = ({ page, imgObjArr }: ISessionFetchProps) => {
   if (!isNewData) {
     return;
   } else {
-    window.localStorage.setItem(
+    window.sessionStorage.setItem(
       `page_${page}`,
       JSON.stringify([...existingSessionStorage, ...imgObjArr])
     );
   }
 };
 
-export { reduceUnsplashImageObj as default, getSessionStorage, setSessionStorage, fetchQuery };
+export {
+  reduceUnsplashImageObj as default,
+  reduceUnsplashImageObj,
+  getSessionStorage,
+  setSessionStorage
+};

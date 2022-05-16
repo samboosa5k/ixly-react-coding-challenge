@@ -1,25 +1,28 @@
-import React, { memo, useEffect, useState, useTransition } from 'react';
+import React, { memo } from 'react';
+import { useAppState } from '../../context/AppContext';
+import { AppStateActions } from '../../context/AppStateActions';
 import { isDefined } from '../../utils/validation';
 import Image from '../Image';
 import { ResponsiveGrid } from './Grid.style';
 import { GridItem } from './GridItem';
-import { IGridProps } from './types';
 
-type MappedGridItemProps = { gridData: ImageProps[] };
-const MappedGridItems = (props: MappedGridItemProps) => {
-  const { gridData } = props;
-  useEffect(() => {
-    console.log('GridItems rendered', gridData);
-  }, [gridData]);
-
+type MappedGridItemProps = {
+  gridData: ImageProps[];
+  handleClick: (arg: ImageProps) => void;
+};
+const MappedGridItems = memo(function MappedGridItems({
+  gridData,
+  handleClick
+}: MappedGridItemProps) {
   if (!isDefined(gridData)) {
-    return null;
+    return <GridItem key={`empty_test`}>No data loaded</GridItem>;
   } else {
     return (
       <>
         {gridData.map((imgObj: ImageProps, idx: number) => (
           <GridItem key={`${idx}_test`}>
             <Image
+              onClick={() => handleClick(imgObj)}
               id={imgObj.id}
               src={imgObj?.src}
               alt={imgObj.alt}
@@ -31,27 +34,23 @@ const MappedGridItems = (props: MappedGridItemProps) => {
       </>
     );
   }
-};
+});
 
 /**
  * Grid component
  * @param {IChildProps} props
  * @param {children} props.children - e.g. photo tiles which will be layed out in a grid
  */
-export const Grid = memo(function Grid({ loadedData }: IGridProps) {
-  const [isPending, startTransition] = useTransition();
-  const [loaded, setLoaded] = useState<ImageProps[]>([]);
+export const Grid = () => {
+  const { appState, dispatch } = useAppState();
 
-  useEffect(() => {
-    startTransition(() => {
-      setLoaded(loadedData);
-    });
-  }, [loadedData]);
+  const handlePhotoClick = (arg: ImageProps) => {
+    dispatch({ type: AppStateActions.TOGGLE_MODAL, payload: arg });
+  };
 
   return (
     <ResponsiveGrid>
-      {isPending && <div>Loading...</div>}
-      <MappedGridItems gridData={loaded} />
+      <MappedGridItems gridData={appState.api.dataList} handleClick={handlePhotoClick} />
     </ResponsiveGrid>
   );
-});
+};

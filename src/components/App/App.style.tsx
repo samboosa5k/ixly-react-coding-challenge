@@ -6,7 +6,7 @@ export const AppContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 1em;
+  padding: 1em;
 
   @media (min-width: 720px) {
     max-width: 1024px;

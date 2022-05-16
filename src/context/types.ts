@@ -1,19 +1,19 @@
 export interface IAppState {
-  app: {
-    loading: boolean;
-    loaded: boolean;
-    errors: string[];
-  };
+  init: boolean;
   api: {
     connecting: boolean;
     connected: boolean;
     errors: string[];
-    dataList: any[];
+    dataList: ImageProps[] | [];
     fetchCount: number;
   };
   session: {
     new: boolean;
     restored: boolean;
-    sessionData: any[];
+    sessionData: ImageProps[] | [];
+  };
+  modal: {
+    open: boolean;
+    data: ImageProps | null;
   };
 }
