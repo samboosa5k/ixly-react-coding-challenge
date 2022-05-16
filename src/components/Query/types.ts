@@ -8,5 +8,6 @@ export type QueryProps = {
   query?: string;
   page?: number;
   apiKey: string;
-  children?: ({ data, error }: { data: any[]; error: null | Record<string, unknown> }) => ReactNode;
+  children?: ReactNode;
+  // children?: ({ data, error }: { data: any[]; error: null | Record<string, unknown> }) => ReactNode;
 };

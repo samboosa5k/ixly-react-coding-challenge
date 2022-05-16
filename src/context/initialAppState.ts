@@ -1,11 +1,7 @@
 import { IAppState } from './types';
 
 export const initialAppState: IAppState = {
-  app: {
-    loading: false,
-    loaded: false,
-    errors: []
-  },
+  init: false,
   api: {
     connecting: false,
     connected: false,
@@ -17,5 +13,9 @@ export const initialAppState: IAppState = {
     new: false,
     restored: false,
     sessionData: []
+  },
+  modal: {
+    open: false,
+    data: null
   }
 };

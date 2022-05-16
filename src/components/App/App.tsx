@@ -1,19 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import AppStateProvider, { useAppState } from '../../context/AppContext';
 import Grid from '../Grid';
+import { Button as LoadMore } from '../Button/Button';
+import { Query } from '../Query/Query';
 
 import { AppContainer } from './App.style';
-import { useQuery } from './hooks';
 
 export const App = () => {
-  const { data, error } = useQuery();
+  const { appState } = useAppState();
+  const [page, setPage] = useState<number>(1);
+
+  const loadMore = () => {
+    setPage((prevPage: number) => prevPage + 1);
+  };
 
   return (
-    <AppContainer id={'App'}>
-      {/*<Query page={1} apiKey={'WQjDDCPBDixElpsgYDvGCNqsgHlxPtY63HICRmOrOsk'}>*/}
-      {/*  {({ data }) => {*/}
-      {/*<Grid loadedData={data} />*/}
-      {/*  }}*/}
-      {/*</Query>*/}
+    <AppContainer>
+      <Query page={page} apiKey={'WQjDDCPBDixElpsgYDvGCNqsgHlxPtY63HICRmOrOsk'}>
+        <Grid />
+      </Query>
+      <LoadMore onClick={loadMore} />
     </AppContainer>
   );
 };

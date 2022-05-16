@@ -2,10 +2,12 @@ import {
   createContext,
   Dispatch,
   ReactNode,
+  ReactPortal,
   useContext,
+  useEffect,
   useReducer
 } from 'react';
-import { AppStateDispatchActions } from './AppStateActions';
+import { AppStateActions, AppStateDispatchActions } from './AppStateActions';
 import { appStateReducer } from './AppStateReducer';
 import { initialAppState } from './initialAppState';
 import { IAppState } from './types';
@@ -26,21 +28,19 @@ export const useAppState = () => {
 };
 
 // App State Provider
-const AppStateProvider = (children: ReactNode) => {
+interface IAppStateProviderProps {
+  children: ReactNode | ReactPortal;
+}
+
+const AppStateProvider = ({ children }: IAppStateProviderProps) => {
   const [appState, dispatch] = useReducer(appStateReducer, initialAppState);
 
-  // useEffect(() => {
-  //   dispatch({
-  //     type: AppStateActions.SET_LOADED_CLIENTS,
-  //     payload: API_RESULTS
-  //   });
-  // }, []);
+  useEffect(() => {
+    dispatch({
+      type: AppStateActions.INIT_APP_STATE
+    });
+  }, []);
 
-  return (
-    <AppContext.Provider value={{ appState, dispatch }}>
-      {children}
-    </AppContext.Provider>
-  );
+  return <AppContext.Provider value={{ appState, dispatch }}>{children}</AppContext.Provider>;
 };
-
 export default AppStateProvider;

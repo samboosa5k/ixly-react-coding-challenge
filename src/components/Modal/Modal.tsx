@@ -1,42 +1,48 @@
 /**
  * Modal component to toggle the maximized photo view/lightbox
  * @description - this modal will be triggered by a context dispatch
- * @note: THe react 18 portal functionality is different than react 17 :S
  */
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
+import { useAppState } from '../../context/AppContext';
+import { AppStateActions } from '../../context/AppStateActions';
+import { ModalContent } from './Modal.style';
 
 export const Modal = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { appState, dispatch } = useAppState();
+  const { modal } = appState;
+
+  // Modal mounting and setup
   const modalRef = useRef<HTMLElement>(document.getElementById('modal'));
   const newElement = useRef<HTMLElement>(document.createElement('div'));
 
-  // Mount modal on mount
-  const mountModal = () => {
-    if (!modalRef.current) {
-      console.log('modal-root not found');
-      return;
+  useEffect(() => {
+    if (modal.data !== null && modalRef.current) {
+      modalRef.current.appendChild(newElement.current);
+      console.log('modal has been attached to #modal');
+    } else if (modal.data === null && modalRef.current) {
+      modalRef.current.firstChild && modalRef.current.removeChild(modalRef.current.firstChild);
+      console.log('modal has been removed from #modal');
     }
-    modalRef.current.appendChild(newElement.current);
-    console.log('modal has been attached to #modal');
+  }, [modal.data]);
+
+  const handleModalClose = () => {
+    dispatch({ type: AppStateActions.TOGGLE_MODAL, payload: null });
   };
 
-  // Call mountModal when component mounts
-  useEffect(() => {
-    if (isOpen) {
-      mountModal();
-      console.log('Initiating modal mounting');
-    }
-    return () => {
-      // modalRef.current.removeChild(modalRef.current.firstChild);
-      // console.log('Modal has been unmounted');
-    };
-  }, []);
-
-  if (!isOpen) {
+  // Modal return based on context
+  if (modal.data === null) {
     return null;
   } else {
-    return ReactDOM.createPortal(<h1>Hello Modal</h1>, newElement.current);
+    return ReactDOM.createPortal(
+      <ModalContent
+        alt={modal.data.alt}
+        src={modal.data.src}
+        id={modal.data.id}
+        onClose={handleModalClose}
+      />,
+      newElement.current
+    );
   }
 };
 
